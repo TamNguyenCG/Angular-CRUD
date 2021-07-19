@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card mt-md-5">
+    <div class="card-header">
+      <h1>Add New User</h1>
+    </div>
+    <div class="card-body">
+      <div class="row-mb-3">
+        <form *ngIf="formAddUser" [formGroup]="formAddUser" (ngSubmit)="submit()">
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Insert user name" formControlName="name">
+              <mat-error *ngIf="name && name.invalid">{{getErrorMessageName()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="Insert user address" formControlName="address">
+              <mat-error *ngIf="address && address.invalid">{{getErrorMessageAddress()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input matInput placeholder="Insert user phone" formControlName="phone">
+              <mat-error *ngIf="phone && phone.invalid">{{getErrorMessagePhone()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Insert user email" formControlName="email">
+              <mat-error *ngIf="email && email.invalid">{{getErrorMessageEmail()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <button class="btn btn-success" type="submit" style="margin-right: 5px" [disabled]="formAddUser.invalid"><i class="fas fa-check"></i> Save</button>
+          <button class="btn btn-secondary" type="button" (click)="backClicked()"><i class="fas fa-backward"></i> Back</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

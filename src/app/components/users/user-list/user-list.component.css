@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  text-align: center !important;
+}
+img{
+  height: 50px;
+}
+.mat-row:hover .mat-cell {
+  background-color: coral ;
+}
+
+th {
+  text-align: center !important;
+}
